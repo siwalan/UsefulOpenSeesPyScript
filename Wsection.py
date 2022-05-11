@@ -1,4 +1,5 @@
 ### Adapted from Wsection.tcl
+### WSection in OpenSeesPy does not allow for 'weak' orientation of beam-col, thus requiring custom (re)-implementation.
 
 def Wsection(secID, matID, d, bf, tf, tw, nfdw, nftw, nfbf, nftf,  orient="Strong"):
     
