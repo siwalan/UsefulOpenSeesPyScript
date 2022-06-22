@@ -16,6 +16,8 @@ def Boxsection(secID, matID, b,h,t, nfdw, nftw, nfbf, nftf,  orient="Strong"):
     # nfbf = number of fibers along flange width
     # nftf = number of fibers along flange thickness
     
+    # Test case for verification
+    # https://colab.research.google.com/drive/1ON3gC6S8utZsz3_9NCWQMD3ES37c1KVI?usp=sharing
     
     if (orient == "Strong"):
         hh = (h-2*t)
