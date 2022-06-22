@@ -16,7 +16,9 @@ proc Boxsection { secID matID b h t nfdw nftw nfbf nftf {Orient ZZ}} {
     # nfbf = number of fibers along flange width
     # nftf = number of fibers along flange thickness
 
-
+    # Verification
+    # https://colab.research.google.com/drive/1ON3gC6S8utZsz3_9NCWQMD3ES37c1KVI?usp=sharing
+    
     if {$Orient == "Weak" || $Orient == "YY" } {
         set bb [expr $b - 2 * $t]
 
