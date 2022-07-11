@@ -19,38 +19,38 @@ def Boxsection(secID, matID, b,h,t, nfdw, nftw, nfbf, nftf,  orient="Strong"):
     # Test case for verification
     # https://colab.research.google.com/drive/1ON3gC6S8utZsz3_9NCWQMD3ES37c1KVI?usp=sharing
     
-    if (orient == "Strong"):
-        hh = (h-2*t)
-        y1 = -h/2
-        y2 = -hh/2
-        y3 = hh/2
-        y4 = h/2
-        
+    if (orient == "Weak" or orient == "YY"):
         bb = (b-2*t)
-        z1 = -b/2
-        z2 = -bb/2
-        z3 = bb/2
-        z4 = b/2
-        
-        
+        y1 = b/2
+        y2 = bb/2
+        y3 = -bb/2
+        y4 = -b/2
+    
+
+        hh = (h-2*t)
+        z1 = -h/2
+        z2 = -hh/2
+        z3 = hh/2
+        z4 = h/2
+
         ops.section('Fiber',secID)
         ops.patch('quad',matID, nfdw, nftw, *[y1,z1], *[y1,z4], *[y2,z4], *[y2,z1]);
         ops.patch('quad',matID, nfbf, nftf, *[y2,z1], *[y2,z2], *[y3,z2], *[y3,z1]);
         ops.patch('quad',matID, nfbf, nftf, *[y2,z3], *[y2,z4], *[y3,z4], *[y3,z3]);
         ops.patch('quad',matID, nfdw, nftw, *[y3,z1], *[y3,z4], *[y4,z4], *[y4,z1]);
     else:
-        bb = (b-2*t)
-        y1 = -b/2
-        y2 = -bb/2
-        y3 = bb/2
-        y4 = b/2
-        
-        hh = (h-2*t)
-        z1 = -h/2
-        z2 = -hh/2
-        z3 = hh/2
-        z4 = h/2
-        
+        hh = h-2*t;
+        y1 = h/2;
+        y2 = hh/2;
+        y3 = -hh/2;
+        y4 = -h/2;
+
+        bb = b-2*t;
+        z1 = -b/2;
+        z2 = -bb/2;
+        z3 = bb/2;
+        z4 = b/2;
+
         ops.section('Fiber',secID)
         ops.patch('quad',matID, nfdw, nftw, *[y1,z1], *[y1,z4], *[y2,z4], *[y2,z1]);
         ops.patch('quad',matID, nfbf, nftf, *[y2,z1], *[y2,z2], *[y3,z2], *[y3,z1]);
